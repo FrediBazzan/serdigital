@@ -1,0 +1,458 @@
+:root {
+    --dark: #272D38;
+    --light: #FFF;
+    --primary-color: #8EADD5;
+    --primary-color-dark: #64768f;
+    --gray: #F6F6F6;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--dark);
+    text-align: center;
+    margin: 0;
+    background-image: radial-gradient(circle at left top, rgb(142 173 213 / .3), transparent 500px),
+    radial-gradient(circle at right center, rgb(142 173 213 / .3), transparent 500px);
+}
+
+.content-wrapper-center {
+    padding: 2rem 3rem;
+    max-width: 67.25rem;
+    margin: auto;
+}
+
+.hero_title{
+    margin-top: 0;
+}
+.header{
+    display: flex;
+    align-items: center;
+}
+
+.header-menu {
+    list-style-type: none;
+    padding: 0 0 0 3rem;
+    text-align: left;
+    position: absolute; /*Burger menu sai do fluxo da página e sobrepoe o conteúdo*/
+    background-color: rgb(255, 255, 255); /*fundo do burger menu*/
+    left: 0;
+    right: 0;
+    top: 60px; /*junto com left e right, deixa a largura do BG preenchendo tudo, como se fosse um margin*/
+    overflow: hidden; /*faz o BG do burger ocupar apenas a área estipulada no max-height*/
+    max-height: 0; /*o zero mantém o menu fechado quando não clicado. (mais ações na classe .menu-btn:checked, para abrir o menu.*/
+    transition: max-height .8s; /*animação da abertura do burger menu*/
+}
+
+.menu-btn:checked ~ .header-menu{ /*Quando o checkbox do Burger menu é clicado (checked), muda o max-height do menu e exibe as opções na altura máxima necessária para caber tudo.*/
+    max-height: 100vh;
+}
+
+  /* Estilos para o ícone de três linhas do Burger Menu */
+  .menu-icon-burger::before {
+    content: "\2630"; /* Código unicode para três linhas */
+    font-size: 25px;
+}
+
+/* Estilos para o ícone de "X" do Burger Menu */
+.menu-btn:checked + .menu-icon .menu-icon-burger::before {
+    content: "\2716"; /* Código unicode para "X" */
+    font-size: 25px;
+}
+
+.header-menu a {
+    display: block;
+    padding: 1.3em 0;
+
+}
+
+a:hover{
+    color: var(--primary-color);
+    transition: 0.5s;
+}
+
+p {
+    line-height: 1.7rem;
+}
+
+a {
+    color: inherit;
+}
+
+nav a {
+    text-decoration: none;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+    line-height: 2.8rem;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.header nav{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    padding: 1em;
+    background-color: var(--primary-color);
+    border-radius: 5px;
+    color: var(--light);
+}
+
+.btn:hover,
+.btn:focus {
+    background-color: var(--primary-color-dark);
+}
+
+img {
+    max-width: 100%;
+}
+
+
+.brands h2 {
+    font-size: 1rem;
+    font-weight:200;
+    color: #4b4f58;
+}
+
+.brands ul {
+    list-style-type: none;
+    padding: 0;
+    background-color: var(--gray);
+    border-radius: 5px;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 1rem;
+}
+
+.hide {
+    position: absolute;
+    clip: rect(1px, 1px, 1px, 1px);
+    padding: 0;
+    border: 0;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+}
+
+.testemunho {
+    background-color: var(--gray);
+    border-radius: 5px;
+    padding: 1rem;
+}
+
+.testemunho_thumb{
+    width: 8.2rem;
+}
+
+.row.testemunhos_wrapper{
+    row-gap: 3rem;  
+}
+
+.row.contato{
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+.contato {
+    background-color: var(--gray);
+    border-radius: 5px;
+    padding: 1rem;
+    margin-top: 4rem;
+}
+
+.contato_image {
+    display: none;
+}
+
+.footer {
+    background-color: var(--gray);
+    padding: 3rem 0 0;
+}
+
+.footer ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer li{
+    padding: .5rem 0;
+}
+
+.footer a {
+    text-decoration: none;
+}
+
+.icons li{
+    display: inline-block;
+    font-size: 1.5rem;
+}
+
+.icons li+li{
+    margin-left: 1rem;
+}
+
+.logo {
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.copyright {
+    white-space: nowrap;
+}
+
+.hero,
+.brands,
+.branding,
+.testemunhos,
+.contato {
+    margin-top: 6rem;
+    margin-bottom: 6rem;
+}
+
+
+/* GRID COLUMNS */
+
+.row{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 0.5rem;
+    grid-auto-flow: dense;
+
+}
+
+.sm-12{
+    grid-column: span 12;
+}
+
+.sm-3{
+    grid-column: span 3;
+}
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (min-width: 46.25em) {
+   
+
+    h1 {
+        font-size: 3.62rem;
+    }
+
+    h2 {
+        font-size: 2.87rem;
+    }
+
+    .content-wrapper-center{
+        padding: 2rem 3rem;
+    }
+    .row{
+        gap: 1rem;
+    }
+
+    .md-3{
+        grid-column: span 3;
+    }
+
+    .md-4{
+        grid-column: span 4;
+    }
+
+    .md-6{
+        grid-column: span 6;
+    }
+
+    .md-9{
+        grid-column: span 9;
+    }
+
+    .md-1-6{
+        grid-column: 1 / 7;
+    }
+
+    .md-7-12{
+        grid-column: 7 / -1;
+    }
+
+    .header{
+        align-items: center;
+    }
+
+    .header-menu{
+        position: initial;
+        left: initial;
+        right: initial;
+        top: initial;
+        max-height: initial;
+        text-align: right;
+        background-color: initial;
+        padding-right: 0;
+
+
+    }
+
+    .header-menu li{
+        display: inline-block;
+    }
+
+    .header-menu a{
+        padding-left: 1rem;
+    }
+
+    .menu-btn, .menu-icon{
+        display: none;
+    }
+
+    .hero,
+    .results,
+    .branding,
+    .contato {
+        text-align: left;
+    }
+
+    .brands ul {
+        gap: 3rem;
+        padding: 2rem;
+    }
+
+    .section_content{
+        padding-right: 1rem;
+    }
+
+    .imagem{
+        text-align: center;
+    }
+
+    .testemunho{
+        display: flex;
+        text-align: left;
+        align-items: center;
+        gap: 2rem
+    }
+
+    .contato_content{
+        margin-right: 5rem;
+    }
+
+    .contato_image{
+        display: block;
+        text-align: center;
+    }
+
+    .footer{
+        text-align: left;
+    }
+
+    .footer h3{
+        margin: 0;
+    }
+
+    .copyright{
+        text-align: center;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media  screen and (min-width: 90em) {
+    
+
+    .row{
+        gap: 3rem;
+    }
+
+    .lg-3{
+        grid-column: span 3;
+    }
+
+    .lg-4{
+        grid-column: span 4;
+    }
+
+    .lg-5{
+        grid-column: span 5;
+    }
+
+    .lg-6{
+        grid-column: span 6;
+    }
+
+    .lg-7{
+        grid-column: span 7;
+    }
+
+    .lg-1-7{
+        grid-column: 1 / 8;
+    }
+    .lg-8-12{
+        grid-column: 8 / -1;
+    }
+
+    .lg-1-5{
+        grid-column: 1 / 6;
+    }
+
+    .testemunho{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .row.contato{
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    .contato_content{
+        padding-top: 2rem;
+    }
+}
+
+/* HAMBURGER MENU */
+
+.menu-icon {
+    position: relative;
+    cursor: pointer;
+    color: var(--dark);
+    font-size: 1.4rem;
+    user-select: none;
+}
